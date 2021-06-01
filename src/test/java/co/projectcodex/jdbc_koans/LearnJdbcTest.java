@@ -61,11 +61,14 @@ public class LearnJdbcTest {
             Class.forName("org.h2.Driver");
             // to fix this set the KOANS_DATABASE_URL to a valid value of `jdbc:h2:./target/jdbc_koans_db` - it will create an
             // embedded database in the target folder
+            final String  KOANS_DATABASE_URL= "jdbc:h2:file:./target/jdbc_koans_db";
+
             Connection conn = DriverManager.getConnection(KOANS_DATABASE_URL, "", "");
         } catch (Exception e) {
             fail(e);
         }
-    }
+
+}
 
     @Test
     public void executeSQLStatement() {
